@@ -4,21 +4,23 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        my_set = set()
+        slow=0
+        fast= 0
 
-        pointer=0
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
 
-        for pointer in nums:
-            if pointer in my_set:
-                return pointer
-            else:
-                my_set.add(pointer)
+            if slow == fast:
+                break
 
-            
-            
+        slow =0 
 
-            
-        
+        while slow != fast:
+            slow = nums[slow]
+            fast = nums [fast]
+
+        return slow
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
